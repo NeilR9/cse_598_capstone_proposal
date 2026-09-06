@@ -1,0 +1,154 @@
+[
+    {
+        "id": "M01-D01", "term_id": "M01", "term": "Mean",
+        "type": "definition", "title": "Mean - Basic Definition",
+        "text": "The arithmetic mean is the average of a set of numerical values. It is calculated by adding all values and dividing their sum by the number of values."
+    },
+    {
+        "id": "M01-D02", "term_id": "M01", "term": "Mean",
+        "type": "mathematical", "title": "Mean - Mathematical Definition",
+        "text": "For values x_1 through x_n, the arithmetic mean is x_bar = (x_1 + x_2 + ... + x_n) / n."
+    },
+    {
+        "id": "M01-D03", "term_id": "M01", "term": "Mean",
+        "type": "example", "title": "Mean - Example",
+        "text": "For the values 2, 4, 6, and 8, the mean is (2 + 4 + 6 + 8) / 4 = 5."
+    },
+    {
+        "id": "M02-D01", "term_id": "M02", "term": "Median",
+        "type": "definition", "title": "Median - Basic Definition",
+        "text": "The median is the middle value of a set of observations after the values have been arranged in order."
+    },
+    {
+        "id": "M02-D02", "term_id": "M02", "term": "Median",
+        "type": "mathematical", "title": "Median - Even-Sized Data Set",
+        "text": "When a data set contains an even number of observations, the median is the average of the two middle values after the observations are ordered."
+    },
+    {
+        "id": "M02-D03", "term_id": "M02", "term": "Median",
+        "type": "comparison", "title": "Median - Compared with Mean",
+        "text": "Unlike the mean, the median is relatively resistant to extreme outliers, so it can be a more representative measure of center for skewed data."
+    },
+    {
+        "id": "M03-D01", "term_id": "M03", "term": "Outliers",
+        "type": "definition", "title": "Outliers - Basic Definition",
+        "text": "An outlier is an observation that is unusually far from the other values in a data set."
+    },
+    {
+        "id": "M03-D02", "term_id": "M03", "term": "Outliers",
+        "type": "effect", "title": "Outliers - Effect on Mean and Median",
+        "text": "A very large or very small outlier can pull the mean substantially, while the median usually changes much less."
+    },
+    {
+        "id": "M03-D03", "term_id": "M03", "term": "Outliers",
+        "type": "example", "title": "Outliers - Example",
+        "text": "For the values 2, 3, 3, 4, and 100, the value 100 is an extreme outlier. It makes the mean much larger than the median."
+    },
+    {
+        "id": "M04-D01", "term_id": "M04", "term": "Population Variance",
+        "type": "definition", "title": "Population Variance - Basic Definition",
+        "text": "Population variance measures how far the values in an entire population tend to vary from the population mean."
+    },
+    {
+        "id": "M04-D02", "term_id": "M04", "term": "Population Variance",
+        "type": "mathematical", "title": "Population Variance - Formula",
+        "text": "Population variance is sigma squared = sum((x_i - mu)^2) / N, where mu is the population mean and N is the population size."
+    },
+    {
+        "id": "M04-D03", "term_id": "M04", "term": "Population Variance",
+        "type": "related", "title": "Population Variance - Standard Deviation",
+        "text": "The population standard deviation is the square root of the population variance."
+    },
+    {
+        "id": "M05-D01", "term_id": "M05", "term": "Sample Variance",
+        "type": "definition", "title": "Sample Variance - Basic Definition",
+        "text": "Sample variance estimates the variability of a population using observations collected from a sample."
+    },
+    {
+        "id": "M05-D02", "term_id": "M05", "term": "Sample Variance",
+        "type": "mathematical", "title": "Sample Variance - Formula",
+        "text": "Sample variance is s squared = sum((x_i - x_bar)^2) / (n - 1), where x_bar is the sample mean and n is the sample size."
+    },
+    {
+        "id": "M05-D03", "term_id": "M05", "term": "Sample Variance",
+        "type": "comparison", "title": "Sample Variance - Bessel's Correction",
+        "text": "Sample variance divides by n - 1 instead of n. This adjustment is called Bessel's correction and helps produce an unbiased estimate of population variance under common assumptions."
+    },
+    {
+        "id": "M06-D01", "term_id": "M06", "term": "Independent Events",
+        "type": "definition", "title": "Independent Events - Basic Definition",
+        "text": "Two events are independent when knowing that one event occurred does not change the probability of the other event."
+    },
+    {
+        "id": "M06-D02", "term_id": "M06", "term": "Independent Events",
+        "type": "mathematical", "title": "Independent Events - Formula",
+        "text": "For independent events A and B, P(A and B) = P(A) times P(B)."
+    },
+    {
+        "id": "M06-D03", "term_id": "M06", "term": "Independent Events",
+        "type": "example", "title": "Independent Events - Example",
+        "text": "A fair coin toss and a fair six-sided die roll can be treated as independent events because the outcome of the coin toss does not change the probabilities of the die roll."
+    },
+    {
+        "id": "M07-D01", "term_id": "M07", "term": "Conditional Probability",
+        "type": "definition", "title": "Conditional Probability - Basic Definition",
+        "text": "Conditional probability is the probability that an event A occurs given that another event B is known to have occurred."
+    },
+    {
+        "id": "M07-D02", "term_id": "M07", "term": "Conditional Probability",
+        "type": "mathematical", "title": "Conditional Probability - Formula",
+        "text": "Conditional probability is P(A given B) = P(A and B) / P(B), provided P(B) is greater than zero."
+    },
+    {
+        "id": "M07-D03", "term_id": "M07", "term": "Conditional Probability",
+        "type": "comparison", "title": "Conditional Probability - Relation to Independence",
+        "text": "If A and B are independent, knowing that B occurred does not change the probability of A, so P(A given B) equals P(A)."
+    },
+    {
+        "id": "M08-D01", "term_id": "M08", "term": "Bayes' Rule",
+        "type": "definition", "title": "Bayes' Rule - Basic Definition",
+        "text": "Bayes' rule describes how to update the probability of a hypothesis after observing evidence."
+    },
+    {
+        "id": "M08-D02", "term_id": "M08", "term": "Bayes' Rule",
+        "type": "mathematical", "title": "Bayes' Rule - Formula",
+        "text": "Bayes' rule is P(A given B) = P(B given A) P(A) / P(B), where P(A) is the prior probability and P(A given B) is the posterior probability."
+    },
+    {
+        "id": "M08-D03", "term_id": "M08", "term": "Bayes' Rule",
+        "type": "related", "title": "Bayes' Rule - Relation to Conditional Probability",
+        "text": "Bayes' rule is derived from the definition of conditional probability and allows a conditional probability to be expressed in the reverse direction."
+    },
+    {
+        "id": "M09-D01", "term_id": "M09", "term": "Linear Functions",
+        "type": "definition", "title": "Linear Functions - Basic Definition",
+        "text": "A linear function describes a relationship in which the output changes at a constant rate as the input changes."
+    },
+    {
+        "id": "M09-D02", "term_id": "M09", "term": "Linear Functions",
+        "type": "mathematical", "title": "Linear Functions - Formula",
+        "text": "A linear function can be written as y = m x + b, where m is the slope and b is the y-intercept."
+    },
+    {
+        "id": "M09-D03", "term_id": "M09", "term": "Linear Functions",
+        "type": "example", "title": "Linear Functions - Example",
+        "text": "For y = 2x + 3, the slope is 2 and the y-intercept is 3. Every increase of 1 in x produces an increase of 2 in y."
+    },
+    {
+        "id": "M10-D01", "term_id": "M10", "term": "Correlation and Causation",
+        "type": "definition", "title": "Correlation - Basic Definition",
+        "text": "Correlation measures the strength and direction of an association between two variables, commonly focusing on linear association."
+    },
+    {
+        "id": "M10-D02", "term_id": "M10", "term": "Correlation and Causation",
+        "type": "comparison", "title": "Correlation vs. Causation",
+        "text": "A correlation between two variables does not by itself establish that one variable causes the other. A third variable, coincidence, or other explanation may account for the association."
+    },
+    {
+        "id": "M10-D03", "term_id": "M10", "term": "Correlation and Causation",
+        "type": "example", "title": "Correlation vs. Causation - Example",
+        "text": "Ice cream sales and swimming incidents may increase during the same months. This correlation does not mean ice cream causes swimming incidents; warmer weather could influence both."
+    }
+]
+
+
