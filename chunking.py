@@ -20,7 +20,7 @@ def load_and_create_chunks(data_path: Path = DATA_PATH) -> list[dict[str, str]]:
         records = json.load(file)
 
     if not isinstance(records, list) or not records:
-        raise ValueError("The math corpus must be a non-empty JSON list.")
+        raise ValueError("The dataset must be a non-empty JSON list.")
 
     chunks: list[dict[str, str]] = []
     seen_ids: set[str] = set()
