@@ -29,9 +29,9 @@ Each Chroma record stores an ID, document text, metadata (`term_id`, `term`, `ty
 Requirements: Python 3.10+ and a Groq API key.
 
 ```powershell
-cd path\to\cse_598_capstone_proposal\adaptive_rag_baseline
+cd path\to\cse_598_capstone_proposal
 
-py -3 -m venv .venv
+python -m venv .venv
 
 .\.venv\Scripts\python.exe -m pip install -r requirements.txt
 
