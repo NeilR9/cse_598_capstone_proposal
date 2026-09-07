@@ -54,6 +54,25 @@ It will also output the generated answer in the terminal.
 
 ---
 
+## Baseline Limitations
+
+The baseline is intentionally designed as a simple, fixed-context RAG system. It does not:
+
+- dynamically change the number of retrieved chunks
+- evaluate context relevance
+- select or filter retrieved context
+- evaluate context sufficiency
+- refine the user's query
+- perform additional retrieval
+- construct or transform the retrieved context
+- optimize the context for the question
+- compress the context through summarization or deduplication
+- measure context token usage as part of the RAG pipeline
+
+These capabilities are part of the proposed adaptive system rather than the current baseline. The baseline will nevertheless be evaluated using the same outcome metrics as the adaptive system, including **answer accuracy, answer completeness, token usage, and latency**, to provide a controlled comparison between the two approaches.
+
+---
+
 ## Project structure
 - `chunking.py` loads and validates the JSON records. Every record is already a semantic chunk, so the loader preserves its definition/formula/example boundary.
 - `vector_store.py` creates the persistent Chroma collection and uses `collection.add()` to embed and store chunks.
