@@ -125,7 +125,6 @@ as its local knowledge base. The file contains 30 semantic chunks covering math 
 
 The user provides a natural-language question either interactively through the terminal or directly as a command-line argument.
 
----
 ### Output
 
 The retrieved chunks and generated answer are printed directly to the terminal.
