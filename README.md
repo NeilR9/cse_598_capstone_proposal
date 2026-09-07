@@ -1,6 +1,6 @@
-# Fixed Top-5 RAG Baseline: Math Definition Assistant
+# Math Definition Assistant RAG Baseline
 
-This is the runnable, non-agentic control condition for the adaptive context-engineering capstone. It answers conceptual math and statistics questions from a local corpus of definitions, formulas, comparisons, and examples.
+This is the runnable RAG baseline program that serves as the non-agentic control condition for the adaptive context-engineering capstone. It answers conceptual math and statistics questions from a local corpus of definitions, formulas, comparisons, and examples.
 
 ```text
 User question
@@ -30,8 +30,11 @@ Requirements: Python 3.10+ and a Groq API key.
 
 ```powershell
 cd path\to\cse_598_capstone_proposal\adaptive_rag_baseline
+
 py -3 -m venv .venv
+
 .\.venv\Scripts\python.exe -m pip install -r requirements.txt
+
 Copy-Item .env.example .env
 ```
 
@@ -73,16 +76,18 @@ The first Chroma run downloads the local `all-MiniLM-L6-v2` sentence-transformer
 
 ## Testability and reproducibility
 
-The corpus, chunk IDs, metadata schema, model names, fixed top-*k* value, and dependencies are all version controlled. Rebuilding the index always starts from `data/math_reference.json`. Run the offline tests without an API key or network call to Groq:
+The corpus, chunk IDs, metadata schema, model names, fixed top-*k* value, and dependencies are all version controlled. Rebuilding the index always starts from `data/math_reference.json`.
+
+Run the offline tests without an API key or network call to Groq:
 
 ```powershell
 .\.venv\Scripts\python.exe -m pytest test_baseline.py
 ```
 
-The tests verify that the corpus loads as valid semantic chunks and that all five retrieved chunks are placed in the LLM prompt. The documented concrete example above demonstrates the full retrieval-and-answer pipeline.
+The tests verify that the corpus loads as valid semantic chunks, that the retrieval system returns the fixed number of chunks, and that the retrieved chunks are placed in the LLM prompt. The documented concrete example above demonstrates the full retrieval-and-answer pipeline.
 
 ## Proposal-ready baseline description
 
 The baseline uses Python, ChromaDB, Chroma's local `all-MiniLM-L6-v2` sentence-transformer embedding function, and the Groq Python SDK with `openai/gpt-oss-120b` for answer generation. It loads a local JSON corpus of 30 semantic math-definition chunks, embeds and persists them in a Chroma cosine-similarity collection, and uses `collection.query()` to retrieve exactly five chunks for every question. The original question and all five chunks are sent to Groq in one generation request, and the response cites chunk IDs.
 
-This is a reasonable starting point because it represents conventional fixed-context RAG while excluding the capstone's proposed contribution. Later, the adaptive agent can assess relevance and context sufficiency, filter or expand context, and retrieve again. Since this baseline always uses the same corpus, embedding model, LLM, and fixed top-*k* retrieval, later performance changes can be attributed to those agentic context-engineering decisions.
+This is a reasonable starting point because it represents conventional fixed-context RAG while excluding the capstone's proposed contribution. Later, the adaptive agent can assess relevance and context sufficiency, filter or expand context, construct and optimize the context, and retrieve again. Since this baseline always uses the same corpus, embedding model, LLM, and fixed top-*k* retrieval, later performance changes can be attributed to those adaptive context-engineering decisions.
