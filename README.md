@@ -1,6 +1,7 @@
 # Math Definition Assistant RAG Baseline
 
 This is the runnable RAG baseline program that serves as the non-agentic program for the adaptive and dynamic context-engineering for Agentic RAG capstone. It answers conceptual math and statistics questions from a local corpus of definitions, formulas, comparisons, and examples.
+The current repository contains the runnable non-agentic baseline used as the starting point for this research. The baseline performs a single fixed Top-K vector retrieval followed by one LLM call. The future adaptive system will extend this pipeline with relevance and sufficiency evaluation, adaptive retrieval, context construction and transformation, context compression, and other context-engineering decisions if necessary such as additiona, refined  context retrieval depending on the evaluations within the process made.
 
 ```text
 User question
