@@ -72,6 +72,35 @@ You may also pass the question directly:
 .\.venv\Scripts\python.exe baseline_rag.py "What is conditional probability?"
 ```
 
+## Alternatuve Version of Running the baseline (More clear):
+After you created the virtual envrionrnment, you can activate it. This allows you to acceess the virtual envriornment:
+```powershell
+.\.venv\Scripts\Activate.ps1 
+```
+
+Then Build or rebuild the local vector  database from the committed JSON Corpus:
+```powershell
+python baseline_rag.py --rebuild
+```
+
+Run the interactive asssistant:
+```powershell
+python baseline_rag.py
+```
+Example question. Include this when prompted for a question:
+
+```text
+When should I use the median instead of the mean?
+```
+You may also pass the question directly:
+
+```powershell
+python baseline_rag.py "What is conditional probability?"
+```
+
+
+
+
 The first Chroma run downloads the local `all-MiniLM-L6-v2` sentence-transformer embedding model. Later runs reuse its cache and the persisted `chroma_db` index.
 
 ## Testability and reproducibility
