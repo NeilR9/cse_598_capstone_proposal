@@ -21,6 +21,37 @@ Our capstone explores an adaptive, agentic RAG approach that allows the system t
 
 The current repository contains the runnable non-agentic baseline used as the starting point for this research. The baseline uses ChromaDB for vector retrieval, the `all-MiniLM-L6-v2` sentence-transformer model for embeddings, and a Groq-hosted LLM for answer generation. It currently uses a local math and statistics corpus containing 30 semantic chunks and retrieves exactly five chunks for every question. The baseline provides a controlled reference point against which the later adaptive system can be evaluated.
 
+## Baseline Architecture
+
+The current baseline intentionally uses a fixed-context RAG pipeline:
+
+```text
+User Question
+      |
+      v
+Sentence-Transformer Embedding
+      |
+      v
+ChromaDB Cosine Vector Search
+      |
+      v
+Fixed Top-5 Retrieval
+      |
+      v
+Question + All 5 Retrieved Chunks
+      |
+      v
+One Groq LLM Call
+      |
+      v
+Cited Answer
+```
+
+The retrieval strategy is intentionally fixed. The baseline always retrieves exactly five chunks and sends all five retrieved chunks to the LLM. 
+It will also output the generated answer in the terminal. 
+
+---
+
 ## Project structure
 - `chunking.py` loads and validates the JSON records. Every record is already a semantic chunk, so the loader preserves its definition/formula/example boundary.
 - `vector_store.py` creates the persistent Chroma collection and uses `collection.add()` to embed and store chunks.
