@@ -83,6 +83,8 @@ These capabilities are part of the proposed adaptive system rather than the curr
 
 Each Chroma record stores an ID, document text, metadata (`term_id`, `term`, `type`, `title`, and source), and an embedding generated internally by Chroma. The `type` metadata distinguishes a basic definition from a mathematical formula, example, comparison, or related fact.
 
+---
+
 ## Setup
 
 Requirements: Python 3.10 or later, and a Groq API key.
@@ -108,6 +110,8 @@ GROQ_API_KEY=your_actual_key_here
 ```
 
 If you are using this repository for the Capstone Project, do not commit `.env`, `.venv`, or `chroma_db`. `.gitignore` excludes them.
+
+---
 
 ## Run the baseline
 
@@ -163,6 +167,8 @@ python baseline_rag.py "What is conditional probability?"
 
 The first Chroma run downloads the local `all-MiniLM-L6-v2` sentence-transformer embedding model. Later runs reuse its cache and the persisted `chroma_db` index.
 
+---
+
 ## Input and Output
 
 ### Input
@@ -201,6 +207,8 @@ Run the offline tests without an API key or network call to Groq:
 ```
 
 The tests verify that the corpus loads as valid semantic chunks, that the retrieval system returns the fixed number of chunks, and that the retrieved chunks are placed in the LLM prompt. The documented concrete example above demonstrates the full retrieval-and-answer pipeline.
+
+---
 
 ## Proposal-ready baseline description
 
