@@ -69,7 +69,7 @@ The baseline is intentionally designed as a simple, fixed-context RAG system. It
 - compress the context through summarization or deduplication
 - measure context token usage as part of the RAG pipeline
 
-These capabilities are part of the proposed adaptive system rather than the current baseline. The baseline will nevertheless be evaluated using the same outcome metrics as the adaptive system, including **answer accuracy, answer completeness, token usage, and latency**, to provide a controlled comparison between the two approaches.
+These capabilities are part of the proposed adaptive system rather than the current baseline. Later, the adaptive agent can assess relevance and context sufficiency, filter or expand context, construct and optimize the context through transformation, compress redundant information through summarization and deduplication, and retrieve again when necessary.
 
 ---
 
