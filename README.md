@@ -1,6 +1,6 @@
 # Math Definition Assistant RAG Baseline
 
-This is the runnable RAG baseline program that serves as the non-agentic control condition for the adaptive context-engineering capstone. It answers conceptual math and statistics questions from a local corpus of definitions, formulas, comparisons, and examples.
+This is the runnable RAG baseline program that serves as the non-agentic program for the adaptive and dynamic context-engineering for Agentic RAG capstone. It answers conceptual math and statistics questions from a local corpus of definitions, formulas, comparisons, and examples.
 
 ```text
 User question
@@ -11,7 +11,7 @@ User question
     -> cited answer
 ```
 
-The retrieval strategy is intentionally fixed. The baseline never evaluates context sufficiency, filters or reranks chunks, rewrites a query, changes *k*, or retrieves again.
+The retrieval strategy is intentionally fixed ad relies on a constant value assigned to the `top-k`. The baseline never evaluates context sufficiency, filters or reranks chunks, rewrites a query, changes *k*, or retrieves again.
 
 ## Project structure
 
@@ -26,7 +26,7 @@ Each Chroma record stores an ID, document text, metadata (`term_id`, `term`, `ty
 
 ## Setup
 
-Requirements: Python 3.10+ and a Groq API key.
+Requirements: Python 3.10 or later, and a Groq API key.
 
 ```powershell
 cd path\to\cse_598_capstone_proposal
@@ -34,10 +34,13 @@ cd path\to\cse_598_capstone_proposal
 python -m venv .venv
 
 .\.venv\Scripts\python.exe -m pip install -r requirements.txt
-
+```
+Copy the contents in `.env.example` to a new file `.env`
 Copy-Item .env.example .env
 ```
-
+To get a groq API key, go to the groq site: https://groq.com/.
+Go to "Start Building" and create an account. Click on API Keys" in the navbar and clicko n the "+ Create API Key" button to create an api key.
+NOTE: This API Key will only be visible once. Make sure to save this API Key somewhere in your local device.    
 Put your actual Groq key in `.env`:
 
 ```text
