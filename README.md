@@ -13,8 +13,15 @@ User question
 
 The retrieval strategy is intentionally fixed ad relies on a constant value assigned to the `top-k`. The baseline never evaluates context sufficiency, filters or reranks chunks, rewrites a query, changes *k*, or retrieves again.
 
-## Project structure
+## Problem Statement
 
+This project investigates whether dynamically engineering the context provided to a large language model can improve the performance of Retrieval-Augmented Generation (RAG) systems. Conventional RAG systems typically retrieve a fixed number of the most similar chunks from a knowledge base and provide those chunks to an LLM to generate an answer. While this approach is simple and effective for many questions, a fixed retrieval strategy may include irrelevant or redundant information or fail to retrieve enough information when a question requires multiple pieces of evidence.
+
+Our capstone explores an adaptive, agentic RAG approach that allows the system to evaluate and modify its retrieved context based on the question. Instead of always using the same number of retrieved chunks, the system will evaluate the relevance and sufficiency of the available context, determine whether additional information is needed, and refine the retrieval process when necessary. Once sufficient information has been retrieved, the system will perform **context construction through optimization and transformation**, organizing and transforming the selected information into a clear, structured, question-specific context. The system will also perform **context compression through summarization and deduplication**, reducing repeated or unnecessary information while preserving the important evidence needed to answer the question. These context-engineering steps are intended to produce a final context that is relevant, sufficient, clear, structured, and free of unnecessary redundancy before it is provided to the LLM for answer generation.
+
+The current repository contains the runnable non-agentic baseline used as the starting point for this research. The baseline uses ChromaDB for vector retrieval, the `all-MiniLM-L6-v2` sentence-transformer model for embeddings, and a Groq-hosted LLM for answer generation. It currently uses a local math and statistics corpus containing 30 semantic chunks and retrieves exactly five chunks for every question. The baseline provides a controlled reference point against which the later adaptive system can be evaluated.
+
+## Project structure
 - `chunking.py` loads and validates the JSON records. Every record is already a semantic chunk, so the loader preserves its definition/formula/example boundary.
 - `vector_store.py` creates the persistent Chroma collection and uses `collection.add()` to embed and store chunks.
 - `retrieval.py` uses `collection.query()` with fixed `TOP_K = 5`.
@@ -48,7 +55,7 @@ Put your actual Groq key in `.env`:
 GROQ_API_KEY=your_actual_key_here
 ```
 
-Do not commit `.env`, `.venv`, or `chroma_db`; `.gitignore` excludes them.
+If you are using this repository for the Capstone Project, do not commit `.env`, `.venv`, or `chroma_db`. `.gitignore` excludes them.
 
 ## Run the baseline
 
@@ -101,9 +108,6 @@ You may also pass the question directly:
 ```powershell
 python baseline_rag.py "What is conditional probability?"
 ```
-
-
-
 
 The first Chroma run downloads the local `all-MiniLM-L6-v2` sentence-transformer embedding model. Later runs reuse its cache and the persisted `chroma_db` index.
 
