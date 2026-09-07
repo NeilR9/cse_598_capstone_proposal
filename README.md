@@ -72,8 +72,8 @@ You may also pass the question directly:
 .\.venv\Scripts\python.exe baseline_rag.py "What is conditional probability?"
 ```
 
-## Alternatuve Version of Running the baseline (More clear):
-After you created the virtual envrionrnment, you can activate it. This allows you to acceess the virtual envriornment:
+## Alternative Version of Running the baseline (More clear):
+After you created the virtual envrionrnment, you can activate it. This allows you to access the virtual envriornment:
 ```powershell
 .\.venv\Scripts\Activate.ps1 
 ```
