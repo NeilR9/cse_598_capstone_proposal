@@ -36,6 +36,7 @@ python -m venv .venv
 .\.venv\Scripts\python.exe -m pip install -r requirements.txt
 ```
 Copy the contents in `.env.example` to a new file `.env`
+```
 Copy-Item .env.example .env
 ```
 To get a groq API key, go to the groq site: https://groq.com/.
