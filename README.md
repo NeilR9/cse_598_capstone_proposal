@@ -111,6 +111,33 @@ python baseline_rag.py "What is conditional probability?"
 
 The first Chroma run downloads the local `all-MiniLM-L6-v2` sentence-transformer embedding model. Later runs reuse its cache and the persisted `chroma_db` index.
 
+## Input and Output
+
+### Input
+
+The current baseline uses:
+
+```text
+data/math_reference.json
+```
+
+as its local knowledge base. The file contains 30 semantic chunks covering math and statistics concepts, including definitions, formulas, comparisons, and examples.
+
+The user provides a natural-language question either interactively through the terminal or directly as a command-line argument.
+---
+### Output
+
+The retrieved chunks and generated answer are printed directly to the terminal.
+
+The baseline does not create a separate answer output file.
+
+ChromaDB stores the generated vector index locally in:
+
+```text
+chroma_db/
+```
+---
+
 ## Testability and reproducibility
 
 The corpus, chunk IDs, metadata schema, model names, fixed top-*k* value, and dependencies are all version controlled. Rebuilding the index always starts from `data/math_reference.json`.
