@@ -21,6 +21,8 @@ Our capstone explores an adaptive, agentic RAG approach that allows the system t
 
 The current repository contains the runnable non-agentic baseline used as the starting point for this research. The baseline uses ChromaDB for vector retrieval, the `all-MiniLM-L6-v2` sentence-transformer model for embeddings, and a Groq-hosted LLM for answer generation. It currently uses a local math and statistics corpus containing 30 semantic chunks and retrieves exactly five chunks for every question. The baseline provides a controlled reference point against which the later adaptive system can be evaluated.
 
+---
+
 ## Baseline Architecture
 
 The current baseline intentionally uses a fixed-context RAG pipeline:
